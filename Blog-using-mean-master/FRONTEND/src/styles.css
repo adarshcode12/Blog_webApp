@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+.loading-text{
+    width: 100%;
+    
+  
+
+}
+
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+  body[data-aos-duration="800"] [data-aos] {
+    transition-duration: .8s;
+  }
+  
+  [data-aos^=fade][data-aos^=fade] {
+    
+    transition-property: opacity,transform;
+  }
+  
+
+  .text-black-opacity-05 {
+    color: rgba(0, 0, 0, 0.5);
+   
+}
+.text-black-opacity-05 a{
+  font-size: 16px;
+}
+
+.podcast-entry {
+    -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+.form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.form-control{
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+
+.form-control:focus {
+  
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+.nopost{
+  margin-top: 25px;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 325px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.card-image {
+	border-radius: 8px;
+	overflow: hidden;
+	padding-bottom: 65%;
+	background-image: url('https://assets.codepen.io/285131/coffee_1.jpg');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: 0 5%;
+	position: relative;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #735400;
+	line-height: 1.222;
+}
+small {
+		display: block;
+		font-size: .75em;
+		font-weight: 400;
+		margin-top: .25em;
+	
+}
+
+
+.action-button {
+	font: inherit;
+	font-size: 1.00rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+}
+
+
+.pp11
+{
+  color: darkblue;
+  align-self:center;
+}
+.input112{
+  font-size:larger;
+  color:black;
+  font:bolder;
+}
+
