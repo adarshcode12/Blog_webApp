@@ -6,6 +6,9 @@ import { AuthService } from '../../auth/auth.service';
 import { ProfileService } from '../../services/profile.service';
 import { Profile } from '../../profile/profile.model';
 
+
+declare var name: any;
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -28,6 +31,7 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.checkAuth()
+    
     this.getErrors()
     this.getUsers()
     this.isloading = true

@@ -5,6 +5,10 @@ import { AuthService } from '../auth/auth.service';
 import { Profile } from '../profile/profile.model';
 import { ProfileService } from '../services/profile.service';
 
+import { HostListener } from '@angular/core';
+
+@HostListener('window:scroll', ['$event'])
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,13 +25,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-
     this.profileisSet = this.profileService.getIsProfileSet()
     this.userIsAuthenticated = this.authService.getIsAuth();
     if (this.userIsAuthenticated) {
       this.getProfile()
     }
-
+      
     this.authListenerSubs = this.authService
       .getAuthStatusListener()
       .subscribe(isAuthenticated => {
@@ -61,6 +64,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
       })
 
   }
+  onWindowScroll() {
+    let element = document.querySelector('.navbar') as HTMLElement;
+    if (window.pageYOffset > element.clientHeight) {
+      element.classList.remove('navbar-light');
+    } else {
+      element.classList.add('navbar-light');
+    }
+  }
 
 
   ngOnDestroy() {
@@ -68,3 +79,4 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
 }
+
