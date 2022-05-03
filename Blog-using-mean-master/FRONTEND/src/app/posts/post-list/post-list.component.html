@@ -1,9 +1,14 @@
+
 <br><div class="html11 body11"></div>
 
 <div  *ngIf = "!userIsAuthenticated" style="height: 500px; background-color:#FFC017 ;">
+
+  <h1 style="font-family: Georgia; font-size: 80px; margin-left: 120px;"><b><br>Keep Writing,</b></h1>
+  <h1 style="font-family: Georgia; font-size: 80px; margin-left: 180px;"><b>Keep Reading.</b></h1>
+  <h2 style="font-family: Georgia; font-size: 36px; margin-left: 120px; margin-top: 40px;">Discover stories, thinking, and expertise<br> from writers on any topic.</h2>
   <!-- <h4 style="margin-left: 560px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Welcome to the World Of Blog</h4> -->
 <!-- Designed with Figma -->
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -365px">
   <g id="study">
   <rect width="100" height="100"/>
   <g id="smoke">
@@ -52,14 +57,17 @@
   
   
 </div>
-<div class="site-section">
+
+<div class="site-section ">
   <div class="container">
     <div class="row">
       <div *ngIf="isloading" style="text-align: center;" class="loading-text">
         <app-spinner></app-spinner>
      </div>
-      <div class="col-lg-8">
-        <div class="blog-card" *ngFor="let post of posts;let i=index" data-aos="fade-up">
+      <div class="col-lg-8" >
+        
+        <div class="blog-card" *ngFor="let post of posts;let i=index" data-aos="fade-up" >
+          
           <div class="meta" >
             <div class="photo" [style.backgroundImage]="'url('+ post.imagePath +') ' "></div>
             <ul class="details">
@@ -68,6 +76,7 @@
               <li class="date">{{post.postDate | date:'short'}}</li>
               
             </ul>
+
           </div>
           <div class="description">
             <h1><a [routerLink]="[post.id]"> {{ post.title }}</a></h1>
@@ -78,28 +87,40 @@
                 <a [routerLink]="['public', user.username]">by {{user.username}}</a></p>
   
             </h2>
+            
           </div>
+          
         </div>
+        
       </div>
   
       
   
       <div class="col-lg-4" >
-        <div class="featured-user  mb-5 mb-lg-0" style="border:5px;">
-          <h3 class="mb-4">Popular Authors</h3>
-          <ul class="list-unstyled">
-            <li *ngFor="let usr of user  | slice:0:4;">
-              <a [routerLink]="['public',usr.username]" class="d-flex align-items-center">
-                <img src={{usr.imagePath}} class="img-fluid mr-2">
-                <div class="podcaster">
-                  <span class="d-block">{{usr.username}}</span>
-                  <span class="small">{{usr.bio |slice:0: 70}}</span>
-                </div>
-              </a>
-            </li>
-  
-  
-          </ul>
+        <h2>New Authors</h2>
+          <div class="flip-card" *ngFor="let usr of user.reverse()  | slice:0:4;" >
+            <div class="flip-card-container" style="--hue: 220" >
+          <div class="flip-card" >
+        
+            <div class="card-front" >
+              <figure>
+                <div class="img-bg"></div>
+                <img src= {{usr.imagePath}} alt="Brohm Lake">
+                <figcaption>{{usr.username}}</figcaption>
+              </figure>
+            </div>
+        
+            <div class="card-back">
+              <figure>
+                <div class="img-bg"></div>
+                <img src="data:image/jpeg;base64,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" alt="Brohm Lake">
+              </figure>
+        
+              <a [routerLink]="['public', usr.username]"><button>{{usr.bio |slice:0: 70}}</button></a>
+        
+            </div>
+        
+          </div>
         </div>
       </div>
     </div>

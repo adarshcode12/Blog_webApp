@@ -1,17 +1,19 @@
 
 <hr>
-<div class="container py-5">
+<div class="container py-5" style="border:#FFC017 solid 2px; background-color: black;">
     <div *ngIf="isloading" style="text-align: center;" class="loading-text">
         <app-spinner></app-spinner>
      </div>
     <div class="row profile" *ngIf = "profile">
         <div  class="col-md-8 col-xs-12  order-2 order-lg-1">
-            <h2 class="text-black font-weight-light mb-4">{{profile.username}}</h2>
-            <a *ngIf="userId===profile.creator && url =='profile'" [routerLink]="['../edit',profileId]">Edit Profile</a>
-            <p>{{profile.bio}}</p>
+            <h2 class="text-white font-weight-light mb-4">{{profile.username}}</h2>
+            <a *ngIf="userId===profile.creator && url =='profile'" [routerLink]="['../edit',profileId]" style="color: aliceblue;">Edit Profile</a>
+            <p style="color: aliceblue;">{{profile.bio}}</p>
         </div>
         <div class="col-md-4 col-xs-12 order-1 order-lg-2" >
-            <img src={{profile.imagePath}} class="img-fluid w-50 rounded-circle mb-3">        
+          <div style="border: aliceblue solid;">
+            <img src={{profile.imagePath}} >    
+          </div>    
         </div>
     </div>
 </div>
