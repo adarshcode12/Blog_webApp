@@ -1,21 +1,43 @@
 
-<hr>
-<div class="container py-5" style="border:#FFC017 solid 2px; background-color: black;">
+<hr><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<div class="container py-5" >
     <div *ngIf="isloading" style="text-align: center;" class="loading-text">
         <app-spinner></app-spinner>
      </div>
-    <div class="row profile" *ngIf = "profile">
-        <div  class="col-md-8 col-xs-12  order-2 order-lg-1">
-            <h2 class="text-white font-weight-light mb-4">{{profile.username}}</h2>
-            <a *ngIf="userId===profile.creator && url =='profile'" [routerLink]="['../edit',profileId]" style="color: aliceblue;">Edit Profile</a>
-            <p style="color: aliceblue;">{{profile.bio}}</p>
-        </div>
-        <div class="col-md-4 col-xs-12 order-1 order-lg-2" >
-          <div style="border: aliceblue solid;">
-            <img src={{profile.imagePath}} >    
-          </div>    
-        </div>
+     <div id="container1" *ngIf = "profile">	
+	
+      <div class="product-details">
+        
+      <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; align-content: center; ">{{profile.username}}</h1>
+      
+      <hr>
+      <p  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: black;">{{profile.bio}}</p>
+
+      <div class="control">
+	
+        <button class="btn">
+         <span  *ngIf="userId===profile.creator && url =='profile'" [routerLink]="['../edit',profileId]">Edit Profile</span>
+       </button>
+        
+      </div>
+      
+          
     </div>
+      
+    <div class="product-image">
+      
+      <img src={{profile.imagePath}} alt="">
+      
+    
+      <button class="custom-btn btn-7"><span>Edit Profile</span></button>
+    </div>
+    
+    </div>
+
 </div>
 
 

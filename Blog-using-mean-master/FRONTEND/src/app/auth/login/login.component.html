@@ -1,7 +1,10 @@
 
-<div class="container" >
-<div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3" >
+<div  >
+    
+<div class="row ">
+    
+    <div class="col-xs-12 col-md-6 col-md-offset-3 ">
+        
         <div class="alert alert-danger" *ngIf="error">
             <p>{{ error.status }} - {{error.error.message}}</p>
         </div>
@@ -9,13 +12,10 @@
            <app-spinner></app-spinner>
         </div>
         
-        <div class="card"style="background-color: #FFC017;">
-            <div class="card-image">	
-                <h2 class="card-heading">
-                Get started
-                <small>Let us create your account</small>
-                </h2>
-            </div>
+        <div class="card container "style="background-color: #FFC017; ">
+        <img src="https://thumbs.dreamstime.com/b/blog-information-website-concept-workplace-background-text-view-above-127465079.jpg" width="100%" height="200px">
+
+            
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
             <div class="form-group" >
                 <br>
@@ -24,21 +24,26 @@
             </div>
             <div class="form-group">
                 <label for="password" class="input112">Password</label>
-                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6" />
+                <input type="password" id="password" class="form-control"  ngModel name="password" required minlength="6" />
             </div>
             <br>
             <div class="form-group">
-                <button class="action-button"  type="submit" [disabled]="!authForm.valid" style="background-color: black;">
+                <button class="actionbutton"  type="submit" [disabled]="!authForm.valid" style="background-color: black;">
                     {{ isLoginMode ? 'Login' : 'Sign Up' }}
                 </button><br><br>
                 
                 <h6 class="pp11" (click)="onSwitchMode()" type="button">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                &nbsp;&nbsp;&nbsp;
                     Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
                 </h6>
             </div>            
         </form>
     </div>
     </div>
+
+    
+
+    
 </div>
 </div>
