@@ -77,7 +77,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 0 20px;
 	height: 100%;
 	text-align: center;
 }
@@ -248,3 +248,5 @@ footer a {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+

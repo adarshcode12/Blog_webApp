@@ -1,5 +1,4 @@
 .mymenu{
-    margin: 0 auto;
     justify-content: center;
     padding-bottom: 30px;
     background-color: #FFC017 ;
@@ -51,9 +50,7 @@ a.button.btn-light.medium img{
     }
 }
 
-.footer{
-    padding: 80px 0 50px;
-}
+
 
 .copyright {
     
