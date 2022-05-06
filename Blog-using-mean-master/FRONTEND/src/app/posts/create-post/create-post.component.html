@@ -1,5 +1,6 @@
 <hr>
 <div class="container">
+  <h1 style="margin-left: 350px;"> CREATE YOUR POST</h1>
   <div *ngIf="isLoading" style="text-align: center;" class="loading-text">
     <app-spinner></app-spinner>
  </div>
@@ -20,7 +21,7 @@
     <div class="form-group">
       <button
         type="button"
-        class="btn btn-outline-success"
+        class="btn btn-outline-warning"
         (click)="filePicker.click()"
       >
         Pick Image
@@ -39,7 +40,7 @@
         <img [src]="imagePreview" [alt]="form.value.title" />
       </div>
       <span
-        class="text-danger"
+        class="text-danger" 
         *ngIf="form.get('image').invalid && form.dirty && form.touched"
         >Please Choose a valid image.</span
       >
@@ -57,8 +58,13 @@
         >Please enter a post title.</span
       >
     </div>
-    <button class="btn btn-primary" [disabled]="form.invalid" type="submit">
+    <button class="btn btn-outline-dark"  [disabled]="form.invalid" type="submit"  >
       Save Post
     </button>
   </form>
 </div>
+
+<br>
+<br>
+<br>
+<br><br><br>

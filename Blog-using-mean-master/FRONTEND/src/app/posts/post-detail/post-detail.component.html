@@ -1,4 +1,4 @@
-  <div class="container">
+ <br><br><br> <div class="container">
     <div class="alert alert-danger" *ngIf="error">
       <p>{{ error.status }} - {{error.error.message}}</p>
   </div>
@@ -50,17 +50,16 @@
           <div class="text-white mb-3">
             <span class="text-black-opacity-05" >
               <small *ngIf="profile">
-                <a [routerLink]="['../public', profile.username]">by {{profile.username}}</a>
+                <a [routerLink]="['../public', profile.username]" style="color: #FFC017;">by {{profile.username}}</a>
                 
-                <span class="sep"> /
-                </span>{{post.postDate | date:'short'}}</small>
+                <span class="sep"> &nbsp;
+                </span> Created On: {{post.postDate | date:'short'}}</small>
             </span>
           </div>
 
           <div class="img">
             <img src={{post.imagePath}} alt="" class="img-responsive center">
           </div>
-          <hr>
 
           <p>{{post.content}}</p>
         </div>

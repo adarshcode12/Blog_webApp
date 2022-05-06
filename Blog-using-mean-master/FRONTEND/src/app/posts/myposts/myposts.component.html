@@ -1,4 +1,6 @@
+
 <div class="site-section bg-light">
+
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-12 text-center">
@@ -25,14 +27,14 @@
           <div class="image w-100"  [style.backgroundImage]="'url('+ post.imagePath +') ' "></div>
           <div class="text w-100">
             <h3 class="">
-              <a [routerLink]="[post.id]">{{post.title}}</a>
+              <a [routerLink]="[post.id]" style="color: #000;">{{post.title}}</a>
             </h3>
 
             <div class="text-white mb-3">
               <span class="text-black-opacity-05" *ngFor="let  user of postbyUser">
                 <small *ngIf="user.creator === post.creator">
-                  <a [routerLink]="['../public', user.username]">by {{user.username}}</a>
-                  <span class="sep"> /
+                  <a [routerLink]="['../public', user.username]" style="color: #FFC017;">by {{user.username}} </a>
+                  <span class="sep">
                   </span>{{post.postDate | date:'short'}}</small>
               </span>
             </div>
