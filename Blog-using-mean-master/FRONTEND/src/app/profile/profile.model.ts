@@ -4,5 +4,6 @@ export interface Profile {
     bio: string;
     imagePath: string;
     creator: string;
+    // comment: string;
   }
   

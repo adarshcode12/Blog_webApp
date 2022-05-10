@@ -22,7 +22,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { BackgroundComponent } from './background/background.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,7 @@ import { BackgroundComponent } from './background/background.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [PostService,
     AuthService,AuthGuard,

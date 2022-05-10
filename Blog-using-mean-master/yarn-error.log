@@ -1,0 +1,53 @@
+Arguments: 
+  D:\nodejs\node.exe C:\Users\Adarsh kumar\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @tinymce/tinymce-angular
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\Adarsh kumar\AppData\Local\Programs\Python\Python37;C:\Program Files (x86)\Python38-32\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Dart\dart-sdk\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\PROGRAM FILES\Dart\dart-sdk\bin;C:\Program Files\Git\cmd;D:\PROGRAMS(MAIN)\Dart\dart-sdk\bin;D:\PROGRAMS(MAIN)\Git\cmd;C:\Program Files (x86)\Java\jre1.8.0_261\bin;C:\Program Files\Java\jdk-14.0.2\bin;C:\Program Files\Java\jdk-15.0.2\bin;D:\nodejs\;C:\MinGW\bin;C:\Program Files\dotnet\;C:\Users\Adarsh kumar\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Adarsh kumar\AppData\Local\Programs\Python\Python39;C:\Users\Adarsh kumar\AppData\Local\Programs\Python\Python39\;D:\PROGRAMS(MAIN)\anaconda(file);D:\PROGRAM FILES\Microsoft VS Code\bin;C:\Users\Adarsh kumar\AppData\Roaming\npm;D:\PROGRAM FILES\flutter_software\flutter\bin;
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.13.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\btech\3-YEAR\sem-6\MDP\current\Blog_webApp\Blog-using-mean-master\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+
+npm manifest: 
+  {
+      "name": "backend",
+      "version": "1.0.0",
+      "description": "",
+      "main": "app.js",
+      "scripts": {
+          "start": "node app.js",
+          "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+          "@syncfusion/ej2-angular-richtexteditor": "^20.1.52",
+          "@tinymce/tinymce-angular": "^6.0.1",
+          "bcrypt": "^5.0.0",
+          "body-parser": "^1.19.0",
+          "cors": "^2.8.5",
+          "express": "^4.17.1",
+          "jsonwebtoken": "^8.5.1",
+          "mongoose": "^5.10.4",
+          "multer": "^1.4.2",
+          "rxjs": "^7.5.5",
+          "rxjs-compat": "^6.6.7"
+      },
+      "devDependencies": {
+          "nodemon": "^2.0.4"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

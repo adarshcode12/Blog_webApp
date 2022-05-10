@@ -23,6 +23,16 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   userIsAuthenticated: boolean
   private authStatusSub: Subscription;
   profile: any
+  comments : String[] = ["This is a good blog","Wonderful Thoughts","I found this blog very interesting"," Very cool ","Awesome and cool blog"]
+  Person= ["Adarsh Kumar" , "Keshav Mittal" , "Abhinav Singh", "Abhimanyu Kumar", "Avishek Roy" ]
+  rand : Number[] = []
+  comment: String = '';
+  new_com: String = '';
+  
+
+    myperson:any = this.Person[Math.floor(Math.random() * this.Person.length)]
+
+    // console: any.log(myperson)//This gives you any string from groceries
 
   constructor(
     public postsService: PostService,
@@ -31,6 +41,39 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     public profileService:ProfileService
   ) { }
+
+  commenting(){
+    // document.getElementById("comment")= "";
+    this.new_com = this.comment
+    // this.Person.push(this.new_com.toString())
+  }
+
+
+  showcc(){
+
+    var x = document.getElementById("mydiv");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  myper(){
+      return Math.floor(Math.random() * this.Person.length)
+  }
+
+  myfn(){
+    var a = Math.floor(Math.random() * this.Person.length);
+    if(this.rand.includes(a) == false){
+        this.rand.push(a)
+        return a
+        
+    }
+    if(this.rand.includes(a) == true){
+      return this.myfn()
+    }
+  }
 
   ngOnInit(): void {
     this.url = this.router.url.split("/")[1]
