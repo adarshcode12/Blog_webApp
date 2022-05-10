@@ -156,4 +156,23 @@ export class PostService {
         });
 
   }
+  addComment(comm: string, content: string, imgpath: File, postDate: Date) {
+    const commentData = new FormData();
+    commentData.append("comm", comm);
+    this.http
+      .post<{ message: string; post: Comment }>(
+        BACKEND_URL+ "/mycomments",
+        commentData
+      )
+      .subscribe(responseData => {
+        this.err.next(null)
+        this.router.navigate(["/"]);
+
+
+      }),
+      err => {
+        this.err.next(err)
+      }
+  }
+
 }

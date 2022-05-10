@@ -22,6 +22,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   userId: String;
   userIsAuthenticated: boolean
   private authStatusSub: Subscription;
+  who: string
   profile: any
   comments : String[] = ["This is a good blog","Wonderful Thoughts","I found this blog very interesting"," Very cool ","Awesome and cool blog"]
   Person= ["Adarsh Kumar" , "Keshav Mittal" , "Abhinav Singh", "Abhimanyu Kumar", "Avishek Roy" ]
@@ -45,6 +46,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   commenting(){
     // document.getElementById("comment")= "";
     this.new_com = this.comment
+    this.who = "By Keshav Mittal"
+    const comm = document.getElementById('avishek')
+    // comm.comment = "";
+
     // this.Person.push(this.new_com.toString())
   }
 
@@ -151,6 +156,30 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     })
 
   }
+
+  getcommentById(id) {
+    this.isloading = true
+    this.postsService.getPost(this.postId).subscribe(postData => {
+      console.log(postData)
+      this.post = {
+        id: postData._id,
+        title: postData.title,
+        content: postData.content,
+        imagePath: postData.imagePath,
+        creator: postData.creator,
+        postDate:postData.postDate
+      };
+      this.getPostUserByCreatorId(postData.creator) 
+
+      // this.compareIds(this.userId,this.post.creator)
+      this.isloading = false
+    })
+    e => {
+      this.isloading = false
+      this.error = e
+    }
+  }
+
   ngOnDestroy() {
 
     this.authStatusSub.unsubscribe();

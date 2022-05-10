@@ -69,8 +69,8 @@
     <div class="form-group">
       <label class="control-label" for="comment" #cleancomment >Your Comment</label>
       <div class="controls">
-        <textarea name="comment"  id="comment"  class="form-control" cols="30" rows="5" placeholder="Comment" [(ngModel)] = "comment"></textarea>
-        <br><button class="btn btn-primary" *ngIf="isAuth" style="float: right;" id="savecomment" (click) = "commenting();" [routerLink]="[post.id]">Save</button>
+        <textarea name="comment"  id="comment"  value="Initial Value" class="form-control" cols="30" rows="5" placeholder="Comment" [(ngModel)] = "comment"></textarea>
+        <br><button class="btn btn-primary" *ngIf="isAuth" style="float: right;" id="savecomment" onclick='document.getElementById("comment").value = " "' (click)="commenting()" [routerLink]="[post.id]">Save</button>
         <button class="btn btn-primary" *ngIf="!isAuth" style="float: right;" routerLink="/login" >Login to comment</button>
       </div>
     </div>
@@ -101,7 +101,7 @@
         <div class="d-flex flex-column col-md-8">
              <div class="commented-section mt-2">
                     <div class="d-flex flex-row align-items-center commented-user" >
-                        <h5 class="mr-2">By Keshav Mittal</h5><span class="dot mb-1"></span></div>
+                        <h5 class="mr-2">{{who}}</h5><span class="dot mb-1"></span></div>
                     <div class="comment-text-sm"><span>{{new_com}}</span></div>
                     <hr>
                         
